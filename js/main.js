@@ -28,7 +28,7 @@
   function toggleTheme() {
     root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
     try { localStorage.setItem('theme', root.dataset.theme); } catch { /* storage unavailable */ }
-    $('meta[name="theme-color"]').content = root.dataset.theme === 'light' ? '#ffffff' : '#0a0a0a';
+    $('meta[name="theme-color"]').content = root.dataset.theme === 'light' ? '#f8fafc' : '#0b1120';
   }
   $('#themeBtn').addEventListener('click', toggleTheme);
 
