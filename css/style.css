@@ -308,10 +308,6 @@ section[id] { scroll-margin-top: 64px; }
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
-/* ---------- Reveal ---------- */
-.reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in { opacity: 1; transform: none; }
-
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
   .footer-top { grid-template-columns: 1fr 1fr 1fr; }
@@ -349,16 +345,9 @@ section[id] { scroll-margin-top: 64px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
   .pulse::after, .palette, .palette-box { animation: none; }
   .card-media img { transition: none; }
 }
-
-/* ---------- Hero entrance (runs on load, no JS needed) ---------- */
-.rise { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
-.d1 { animation-delay: .06s; } .d2 { animation-delay: .12s; } .d3 { animation-delay: .18s; } .d4 { animation-delay: .24s; }
-@keyframes rise { from { opacity: 0; transform: translateY(10px); } }
-@media (prefers-reduced-motion: reduce) { .rise { animation: none; } }
 
 /* ---------- Hero portrait ---------- */
 .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: center; }

@@ -86,5 +86,5 @@
   }
   .nav-links--static a { padding: 6px 8px; font-size: 14px; }
   .nav-links--static + .nav-actions { margin-left: 0; }
-  .nav:has(.nav-links--static) .brand span { display: none; }
+  .nav--sub .brand span { display: none; }
 }

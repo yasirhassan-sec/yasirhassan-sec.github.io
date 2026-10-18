@@ -68,12 +68,6 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   $$('main section[id]').forEach(s => navObserver.observe(s));
 
-  /* ---------- Reveal on scroll ---------- */
-  const revealObserver = new IntersectionObserver(entries => entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); }
-  }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  $$('.reveal').forEach(el => revealObserver.observe(el));
-
   /* ---------- Command palette (Ctrl/⌘ + K) ---------- */
   const palette = $('#palette');
   const pInput = $('#paletteInput');
