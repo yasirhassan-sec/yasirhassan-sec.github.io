@@ -12,6 +12,9 @@ css/post.css            Article and listing typography
 js/main.js              Home page: command palette, theme, contact form, navigation
 js/page.js              Writeup pages: theme, code copy buttons
 js/analytics.js         GoatCounter loader (off until a site code is set)
+projects/               Case-study pages with architecture diagrams
+css/case-study.css      Case-study layout and diagram styles
+css/fonts.css           Self-hosted Geist font faces
 assets/                 Photo, images, icons, share image and résumé PDF
 CNAME                   Custom domain for GitHub Pages
 .well-known/            security.txt
