@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Yasir Hassan · Writeups</title>
+  <link>https://yasirhassan.tech/writeups/</link>
+  <description>Notes on security, cryptography and the systems Yasir Hassan builds.</description>
+  <language>en</language>
+  <item>
+    <title>Building a tamper-evident land registry</title>
+    <link>https://yasirhassan.tech/writeups/tamper-evident-land-registry/</link>
+    <guid>https://yasirhassan.tech/writeups/tamper-evident-land-registry/</guid>
+    <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
+    <description>How Milkiyat uses hash chaining, AES-256-GCM and RSA signatures so that any edit to a land record, even one made directly in the database, is caught.</description>
+  </item>
+  <item>
+    <title>Training a fire and smoke detector for multi-camera surveillance</title>
+    <link>https://yasirhassan.tech/writeups/fire-smoke-detection-yolo/</link>
+    <guid>https://yasirhassan.tech/writeups/fire-smoke-detection-yolo/</guid>
+    <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
+    <description>Notes from building the detection layer of VigiLense, my final year project: training YOLO on D-Fire, reading the metrics honestly, and turning detections into alerts people can act on.</description>
+  </item>
+</channel>
+</rss>

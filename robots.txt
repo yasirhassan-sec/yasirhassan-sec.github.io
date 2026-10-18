@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yasirhassan-sec.github.io/sitemap.xml
+Sitemap: https://yasirhassan.tech/sitemap.xml

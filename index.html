@@ -3,37 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.goatcounter.com; connect-src 'self' https://formspree.io https://*.goatcounter.com; base-uri 'self'; form-action 'self' https://formspree.io; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Yasir Hassan · Cybersecurity</title>
 <meta name="description" content="Yasir Hassan, Cybersecurity Intern at Safe City Islamabad and Computer Engineering student at Bahria University. Vulnerability assessment, web application security, threat intelligence and network security.">
 <meta name="author" content="Yasir Hassan">
 <meta name="theme-color" content="#0a0a0a">
 <meta name="color-scheme" content="dark light">
-<link rel="canonical" href="https://yasirhassan-sec.github.io/">
+<link rel="canonical" href="https://yasirhassan.tech/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://yasirhassan-sec.github.io/">
+<meta property="og:url" content="https://yasirhassan.tech/">
 <meta property="og:site_name" content="Yasir Hassan">
 <meta property="og:title" content="Yasir Hassan · Cybersecurity">
 <meta property="og:description" content="Cybersecurity Intern at Safe City Islamabad. Vulnerability assessment, web app security, threat intelligence and network security.">
-<meta property="og:image" content="https://yasirhassan-sec.github.io/assets/og-image.png">
+<meta property="og:image" content="https://yasirhassan.tech/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Yasir Hassan, Cybersecurity Intern">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://yasirhassan-sec.github.io/assets/og-image.png">
+<meta name="twitter:image" content="https://yasirhassan.tech/assets/og-image.png">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <script src="js/theme.js"></script>
+<script src="js/analytics.js" defer></script>
+<link rel="alternate" type="application/rss+xml" title="Yasir Hassan · Writeups" href="writeups/feed.xml">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Yasir Hassan",
-  "url": "https://yasirhassan-sec.github.io/",
-  "image": "https://yasirhassan-sec.github.io/assets/og-image.png",
+  "url": "https://yasirhassan.tech/",
+  "image": "https://yasirhassan.tech/assets/yasir-hassan.jpg",
   "jobTitle": "Cybersecurity Intern",
   "worksFor": { "@type": "Organization", "name": "Safe City Islamabad" },
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Bahria University Islamabad" },
@@ -47,6 +49,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/post.css">
 <noscript><link rel="stylesheet" href="css/noscript.css"></noscript>
 </head>
 <body>
@@ -62,6 +65,7 @@
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
+      <a href="#writeups">Writeups</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
@@ -85,6 +89,8 @@
 
   <!-- Hero -->
   <section class="hero container">
+   <div class="hero-grid">
+    <div class="hero-text">
     <a class="pill rise d0" href="#experience">
       <span class="pulse" aria-hidden="true"></span>
       Cybersecurity Intern at Safe City Islamabad
@@ -104,6 +110,18 @@
       <li><a href="https://www.linkedin.com/in/yasir-hassan-" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a></li>
       <li><a href="mailto:yasirb169@gmail.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
     </ul>
+    </div>
+    <figure class="portrait rise d2">
+      <picture>
+        <source srcset="assets/yasir-hassan.webp" type="image/webp">
+        <img src="assets/yasir-hassan.jpg" alt="Portrait of Yasir Hassan" width="400" height="400" fetchpriority="high">
+      </picture>
+      <figcaption>
+        <span><b>Yasir Hassan</b>Rawalpindi, Pakistan</span>
+        <span class="open"><span class="pulse" aria-hidden="true"></span>Open to work</span>
+      </figcaption>
+    </figure>
+   </div>
   </section>
 
   <!-- Work -->
@@ -234,20 +252,78 @@
     </dl>
   </section>
 
+  <!-- Writeups -->
+  <section id="writeups" class="section container">
+    <div class="section-head reveal">
+      <h2>Writeups</h2>
+      <a class="text-link" href="writeups/">All writeups →</a>
+    </div>
+    <div class="posts reveal">
+      <!-- writeups:start -->
+  <a class="post-link" href="writeups/tamper-evident-land-registry/">
+    <time datetime="2026-10-18">Oct 18, 2026</time>
+    <div><h3>Building a tamper-evident land registry</h3><p>How Milkiyat uses hash chaining, AES-256-GCM and RSA signatures so that any edit to a land record, even one made directly in the database, is caught.</p></div>
+    <span class="read">7 min read</span>
+  </a>
+  <a class="post-link" href="writeups/fire-smoke-detection-yolo/">
+    <time datetime="2026-10-18">Oct 18, 2026</time>
+    <div><h3>Training a fire and smoke detector for multi-camera surveillance</h3><p>Notes from building the detection layer of VigiLense, my final year project: training YOLO on D-Fire, reading the metrics honestly, and turning detections into alerts people can act on.</p></div>
+    <span class="read">6 min read</span>
+  </a>
+      <!-- writeups:end -->
+    </div>
+  </section>
+
   <!-- Contact -->
   <section id="contact" class="section container">
-    <div class="cta reveal">
-      <h2>Let's talk.</h2>
-      <p>I'm open to cybersecurity internships and entry-level roles in security operations, vulnerability assessment and application security.</p>
-      <div class="cta-actions">
+    <div class="contact">
+      <div class="contact-intro reveal">
+        <h2>Let's talk.</h2>
+        <p>I'm open to cybersecurity internships and entry-level roles in security operations, vulnerability assessment and application security. I usually reply within a day.</p>
         <div class="email-chip">
           <a href="mailto:yasirb169@gmail.com">yasirb169@gmail.com</a>
-          <button class="copy" data-copy-email aria-label="Copy email address">
+          <button class="copy" type="button" data-copy-email aria-label="Copy email address">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
           </button>
         </div>
-        <a class="btn btn-outline" href="https://www.linkedin.com/in/yasir-hassan-" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <ul class="contact-links">
+          <li><a href="https://www.linkedin.com/in/yasir-hassan-" target="_blank" rel="noopener">LinkedIn <span>↗</span></a></li>
+          <li><a href="https://github.com/yasirhassan-sec" target="_blank" rel="noopener">GitHub <span>↗</span></a></li>
+          <li><a href="assets/Yasir_Hassan_Resume.pdf" download>Résumé <span>↓</span></a></li>
+        </ul>
       </div>
+
+      <!-- Set data-endpoint to your Formspree URL (https://formspree.io/f/XXXXXXX).
+           While it is empty, the form falls back to opening the visitor's email app. -->
+      <form class="form reveal" id="contactForm" data-endpoint="" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-subject">Subject</label>
+          <select id="f-subject" name="subject">
+            <option>Job or internship opportunity</option>
+            <option>Project or collaboration</option>
+            <option>Security question</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" rows="5" required maxlength="5000"></textarea>
+        </div>
+        <!-- Honeypot: hidden from people, bots fill it in -->
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-light btn-block" type="submit" id="formSubmit">Send message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 </main>

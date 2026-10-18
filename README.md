@@ -5,28 +5,42 @@ Personal portfolio site. Hand-coded in HTML, CSS and vanilla JavaScript, with no
 ## Structure
 
 ```
-index.html      Page markup, SEO meta tags and JSON-LD structured data
-css/style.css   Design tokens (dark/light themes), layout and components
-js/main.js      Interactions: command palette, theme, navigation, reveal
-assets/         Images, favicon and résumé PDF
+index.html              Home page: hero, work, experience, skills, writeups, contact
+writeups/               Articles, listing page and RSS feed
+css/style.css           Design tokens (dark/light themes), layout and components
+css/post.css            Article and listing typography
+js/main.js              Home page: command palette, theme, contact form, navigation
+js/page.js              Writeup pages: theme, code copy buttons
+js/analytics.js         GoatCounter loader (off until a site code is set)
+assets/                 Photo, images, icons, share image and résumé PDF
+CNAME                   Custom domain for GitHub Pages
+.well-known/            security.txt
 ```
 
-## Features
+## Configuration
 
-- Dark-first design with a light theme, remembered per visitor
-- Command palette (`Ctrl K` / `⌘K`) for navigation and quick actions
-- Content Security Policy, `security.txt`, Open Graph image and JSON-LD
-- Accessible: skip link, keyboard focus styles, ARIA labels, reduced-motion support
-- Responsive down to 320px wide
+| What | Where | Value |
+|---|---|---|
+| Contact form | `index.html`, `data-endpoint` on `#contactForm` | Formspree URL, e.g. `https://formspree.io/f/abcdwxyz`. Empty = opens the visitor's email app |
+| Analytics | `js/analytics.js`, `GOATCOUNTER_CODE` | GoatCounter site code. Empty = off |
 
 ## Run locally
-
-Open `index.html` in a browser, or serve the folder:
 
 ```bash
 python -m http.server 5510
 ```
 
+Then open http://localhost:5510.
+
 ## Deploy
 
-Any static host works. For GitHub Pages, push this folder to a repository and enable Pages on the `main` branch.
+Hosted on GitHub Pages from the `main` branch with the custom domain in `CNAME`.
+DNS for `yasirhassan.tech`:
+
+| Type | Host | Value |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | yasirhassan-sec.github.io |

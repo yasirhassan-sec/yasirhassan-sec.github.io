@@ -11,6 +11,9 @@
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const EMAIL = 'yasirb169@gmail.com';
 
+  /* Analytics event helper: a no-op until GoatCounter is configured in js/analytics.js */
+  const track = name => { window.goatcounter?.count?.({ path: name, title: name, event: true }); };
+
   /* ---------- Toast ---------- */
   const toastEl = $('#toast');
   let toastTimer;
@@ -147,6 +150,51 @@
     else if (e.key === 'Enter') { e.preventDefault(); runCommand(); }
   });
   $('#kbdHint').textContent = /Mac|iPhone|iPad/.test(navigator.platform) ? '⌘K' : 'Ctrl K';
+
+  /* ---------- Contact form ---------- */
+  const form = $('#contactForm');
+  const statusEl = $('#formStatus');
+  const submitBtn = $('#formSubmit');
+  const setStatus = (msg, kind = '') => { statusEl.textContent = msg; statusEl.className = `form-status ${kind}`; };
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const data = Object.fromEntries(new FormData(form));
+    if (data._gotcha) return; // bot filled the honeypot
+
+    const endpoint = form.dataset.endpoint;
+    if (!endpoint) {
+      // No form service configured yet: hand off to the visitor's email app
+      const body = `${data.message}\n\n${data.name}\n${data.email}`;
+      location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(body)}`;
+      setStatus('Opening your email app…');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    setStatus('');
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      form.reset();
+      setStatus("Thanks, your message is on its way. I'll get back to you soon.", 'ok');
+      track('contact-form-sent');
+    } catch {
+      setStatus(`Something went wrong. Please email me directly at ${EMAIL}.`, 'err');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+    }
+  });
+
+  /* ---------- Analytics events ---------- */
+  $$('a[href$="Yasir_Hassan_Resume.pdf"]').forEach(a => a.addEventListener('click', () => track('resume-download')));
 
   /* ---------- Footer year ---------- */
   $('#year').textContent = new Date().getFullYear();
