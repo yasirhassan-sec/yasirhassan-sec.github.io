@@ -1,8 +1,7 @@
 .nf {
   min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 40px 16px; gap: 18px;
+  gap: 14px; padding: 40px 16px; text-align: center;
 }
-.nf-term { width: 100%; max-width: 520px; text-align: left; margin-bottom: 18px; }
-.nf-term .term-body { min-height: 0; }
-.nf h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -.03em; }
-.nf p { color: var(--muted); max-width: 420px; }
+.nf-code { font-family: var(--mono); font-size: 13px; color: var(--text-3); padding: 4px 10px; border: 1px solid var(--border); border-radius: 99px; }
+.nf h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 600; letter-spacing: -.04em; }
+.nf-text { color: var(--text-2); margin-bottom: 10px; }
