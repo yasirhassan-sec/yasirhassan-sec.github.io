@@ -572,5 +572,41 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
 @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 720px) { .steps { grid-template-columns: 1fr; } .now { align-items: flex-start; } }
 
+/* ---------- Interaction feedback: every button and box reacts to hover and press ---------- */
+.btn, .icon-btn, .kbd-btn, .pill, .socials a, .copy, .footer-social a, .term-close, .footer-bottom button {
+  transition: background .15s, color .15s, border-color .15s, box-shadow .15s, filter .15s, transform .12s;
+}
+.btn-light:hover { box-shadow: 0 6px 20px -6px color-mix(in srgb, var(--btn-bg) 70%, transparent); transform: translateY(-1px); }
+.btn-outline:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border-strong)); transform: translateY(-1px); }
+.pill:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border-strong)); }
+.icon-btn:hover, .socials a:hover { color: var(--accent); }
+.btn:active, .icon-btn:active, .kbd-btn:active, .pill:active, .socials a:active, .copy:active,
+.footer-social a:active, .term-close:active, .footer-bottom button:active { transform: scale(.95); filter: brightness(.95); }
+
+.step, .highlights li, .tl-card, .skill-card, .portrait, .contact-lines li {
+  transition: border-color .2s, transform .2s, box-shadow .2s, background .2s;
+}
+.step:hover, .tl-card:hover, .skill-card:hover, .portrait:hover {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border-strong)); transform: translateY(-2px); box-shadow: var(--shadow);
+}
+.highlights li:hover { background: var(--bg-hover); }
+.highlights li:first-child:hover { border-radius: var(--radius) 0 0 var(--radius); }
+.highlights li:last-child:hover { border-radius: 0 var(--radius) var(--radius) 0; }
+.highlights li:hover b { color: var(--accent); }
+.step:hover .step-num, .skill-card:hover .skill-icon { color: var(--accent-2); }
+.card:active, .step:active, .tl-card:active, .skill-card:active { transform: translateY(0) scale(.99); }
+.tags li { transition: border-color .15s, color .15s; }
+.tags li:hover { border-color: var(--border-strong); color: var(--text); }
+.field input:hover, .field textarea:hover, .field select:hover { border-color: var(--text-3); }
+@media (max-width: 720px) {
+  .highlights li:hover { border-radius: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover, .btn:active, .icon-btn:active, .kbd-btn:active, .pill:active, .socials a:active, .copy:active,
+  .footer-social a:active, .term-close:active, .footer-bottom button:active,
+  .step:hover, .tl-card:hover, .skill-card:hover, .portrait:hover,
+  .card:active, .step:active, .tl-card:active, .skill-card:active { transform: none; }
+}
+
 /* ---------- Utilities ---------- */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

@@ -19,6 +19,9 @@
 .post-link p { margin-top: 4px; font-size: 14.5px; color: var(--text-2); }
 .post-link .read { font-size: 13px; color: var(--text-3); white-space: nowrap; }
 .post-link:hover h3 { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--text-3); }
+.post-link:hover { background: var(--bg-hover); box-shadow: -16px 0 0 var(--bg-hover), 16px 0 0 var(--bg-hover); }
+.post-link:hover .read { color: var(--accent); }
+.post-link:active { opacity: .85; }
 
 /* ---------- Article ---------- */
 .article { max-width: 700px; margin: 0 auto; padding: 0 24px 96px; }
