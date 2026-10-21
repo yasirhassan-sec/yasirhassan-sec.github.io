@@ -74,7 +74,7 @@
       print('Computer Engineering student, Bahria University, Islamabad.');
       print('Former Cybersecurity Intern at Safe City Islamabad.');
       print('Vulnerability assessment · web app security · threat intelligence.');
-      print('Status: open to cybersecurity roles.', 't-acc');
+      print('Status: open to cybersecurity, AI and software roles.', 't-acc');
     },
     ls(args) {
       const dir = (args[0] || '').replace(/\/$/, '');
