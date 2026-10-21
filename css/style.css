@@ -193,6 +193,20 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
 .card-feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.05fr 1fr; }
 .card-wide { grid-column: 1 / -1; }
 .card-split { display: grid; grid-template-columns: 1fr 1fr; }
+
+/* Per-project accent line along the top of each card */
+.card[class*="acc-"] { position: relative; }
+.card[class*="acc-"]::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 1;
+  background: var(--card-accent); opacity: .85; transition: opacity .2s, height .2s;
+}
+.card[class*="acc-"]:hover::before { opacity: 1; height: 4px; }
+.acc-vigilense { --card-accent: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.acc-netguard { --card-accent: linear-gradient(90deg, #10b981, #2dd4bf); }
+.acc-milkiyat { --card-accent: linear-gradient(90deg, #d97706, #fbbf24); }
+.acc-dastarkhwan { --card-accent: linear-gradient(90deg, #ea580c, #fb923c); }
+.acc-hrms { --card-accent: linear-gradient(90deg, #7c3aed, #a78bfa); }
+.acc-network { --card-accent: linear-gradient(90deg, #0891b2, #22d3ee); }
 .card-split .card-body { padding: 32px; }
 
 /* Sample NetGuard scan (decorative, same look in both themes) */
@@ -561,7 +575,19 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
 }
 
 /* ---------- How I work ---------- */
-.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: none; }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; counter-reset: none; }
+.step-top { display: flex; align-items: center; justify-content: space-between; }
+.step-icon {
+  display: grid; place-items: center; width: 38px; height: 38px; border-radius: 10px; color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  transition: color .2s;
+}
+.step:hover .step-icon { color: var(--accent-2); }
+/* Dotted connector from each step to the next */
+.step:not(:last-child)::after {
+  content: ""; position: absolute; top: 41px; right: -23px; width: 22px;
+  border-top: 2px dotted color-mix(in srgb, var(--accent) 60%, transparent);
+}
 .step { display: flex; flex-direction: column; gap: 10px; padding: 22px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-elev); position: relative; }
 .step-num { font-family: var(--mono); font-size: 12px; color: var(--accent); }
 .step h3 { font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
@@ -569,8 +595,18 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
 .steps-note { margin-top: 24px; font-size: 14.5px; color: var(--text-2); max-width: 720px; }
 .steps-note a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border-strong); }
 .steps-note a:hover { text-decoration-color: var(--text-3); }
-@media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 720px) { .steps { grid-template-columns: 1fr; } .now { align-items: flex-start; } }
+@media (max-width: 860px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+  .step:nth-child(2)::after { display: none; }
+}
+@media (max-width: 720px) {
+  .steps { grid-template-columns: 1fr; }
+  .now { align-items: flex-start; }
+  .step:not(:last-child)::after, .step:nth-child(2)::after {
+    display: block; top: auto; bottom: -23px; right: auto; left: 41px; width: 0; height: 22px;
+    border-top: 0; border-left: 2px dotted color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+}
 
 /* ---------- Interaction feedback: every button and box reacts to hover and press ---------- */
 .btn, .icon-btn, .kbd-btn, .pill, .socials a, .copy, .footer-social a, .term-close, .footer-bottom button {

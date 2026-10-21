@@ -48,8 +48,8 @@
 <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="preload" href="assets/yasir-hassan.webp" as="image" type="image/webp" fetchpriority="high">
-<link rel="stylesheet" href="css/style.css?v=20261021c">
-<link rel="stylesheet" href="css/post.css?v=20261021c">
+<link rel="stylesheet" href="css/style.css?v=20261021d">
+<link rel="stylesheet" href="css/post.css?v=20261021d">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -142,7 +142,7 @@
     </div>
 
     <div class="work-grid">
-      <article class="card card-feature">
+      <article class="card card-feature acc-vigilense">
         <a class="card-media media-navy" href="projects/vigilense/" tabindex="-1" aria-hidden="true">
           <img src="assets/vigilense-logo-dark-1200.webp" alt="" width="1200" height="330" loading="lazy" decoding="async">
         </a>
@@ -160,7 +160,7 @@
         </div>
       </article>
 
-      <article class="card card-wide card-split">
+      <article class="card card-wide card-split acc-netguard">
         <div class="card-body">
           <div class="card-meta"><span>Desktop application</span><span>2026</span></div>
           <h3><a href="https://github.com/yasirhassan-sec/netguard" target="_blank" rel="noopener">NetGuard <span class="arrow">↗</span></a></h3>
@@ -189,7 +189,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card acc-milkiyat">
         <a class="card-media media-milkiyat" href="projects/milkiyat/" tabindex="-1" aria-hidden="true">
           <img src="assets/milkiyat-logo.webp" srcset="assets/milkiyat-logo-720.webp 720w, assets/milkiyat-logo.webp 1400w" sizes="(max-width: 720px) 90vw, 420px" alt="" width="1400" height="374" loading="lazy" decoding="async">
         </a>
@@ -202,7 +202,7 @@
         </div>
       </article>
 
-      <article class="card">
+      <article class="card acc-dastarkhwan">
         <a class="card-media media-shot" href="projects/dastarkhwan/" tabindex="-1" aria-hidden="true">
           <img src="assets/dastarkhwan-dashboard.webp" srcset="assets/dastarkhwan-dashboard-720.webp 720w, assets/dastarkhwan-dashboard.webp 1400w" sizes="(max-width: 720px) 100vw, 500px" alt="" width="1400" height="875" loading="lazy" decoding="async">
         </a>
@@ -215,7 +215,7 @@
         </div>
       </article>
 
-      <article class="card card-compact">
+      <article class="card card-compact acc-hrms">
         <div class="card-media media-diagram" aria-hidden="true">
           <svg viewBox="0 0 360 160">
             <rect class="dg-node" x="20" y="14" width="320" height="132" rx="8"/>
@@ -244,7 +244,7 @@
         </div>
       </article>
 
-      <article class="card card-compact">
+      <article class="card card-compact acc-network">
         <div class="card-media media-diagram" aria-hidden="true">
           <svg viewBox="0 0 360 160">
             <path class="dg-line" d="M180 36 100 62M180 36l80 26M100 84 50 108M100 84l30 24M260 84l-30 24M260 84l50 24M130 62h100"/>
@@ -320,25 +320,25 @@
     </div>
     <ol class="steps">
       <li class="step">
-        <span class="step-num">01</span>
+        <div class="step-top"><span class="step-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="m12 12 6-6"/></svg></span><span class="step-num">01</span></div>
         <h3>Scope &amp; recon</h3>
         <p>Agree what's in scope, then map the attack surface: hosts, services, endpoints and exposed data.</p>
         <ul class="tags"><li>Nmap</li><li>OSINT</li></ul>
       </li>
       <li class="step">
-        <span class="step-num">02</span>
+        <div class="step-top"><span class="step-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><span class="step-num">02</span></div>
         <h3>Assess</h3>
         <p>Test against the OWASP Top 10 with tooling and manual checks, so findings are real, not scanner noise.</p>
         <ul class="tags"><li>Burp Suite</li><li>Wireshark</li></ul>
       </li>
       <li class="step">
-        <span class="step-num">03</span>
+        <div class="step-top"><span class="step-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="step-num">03</span></div>
         <h3>Validate &amp; prioritise</h3>
         <p>Confirm impact, rate severity and rank issues by real business risk rather than by count.</p>
         <ul class="tags"><li>CVSS</li><li>Threat modelling</li></ul>
       </li>
       <li class="step">
-        <span class="step-num">04</span>
+        <div class="step-top"><span class="step-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span><span class="step-num">04</span></div>
         <h3>Report &amp; remediate</h3>
         <p>Write clear findings with evidence and fix steps developers can act on, then retest the fixes.</p>
         <ul class="tags"><li>Reporting</li><li>Retesting</li></ul>
@@ -420,11 +420,13 @@
     <div class="posts">
       <!-- writeups:start -->
   <a class="post-link" href="writeups/tamper-evident-land-registry/">
+    <img class="post-thumb" src="assets/og-tamper-evident-land-registry-thumb.webp" alt="" width="400" height="210" loading="lazy" decoding="async">
     <time datetime="2026-10-18">Oct 18, 2026</time>
     <div><h3>Building a tamper-evident land registry</h3><p>How Milkiyat uses hash chaining, AES-256-GCM and RSA signatures so that any edit to a land record, even one made directly in the database, is caught.</p></div>
     <span class="read">7 min read</span>
   </a>
   <a class="post-link" href="writeups/fire-smoke-detection-yolo/">
+    <img class="post-thumb" src="assets/og-fire-smoke-detection-yolo-thumb.webp" alt="" width="400" height="210" loading="lazy" decoding="async">
     <time datetime="2026-10-18">Oct 18, 2026</time>
     <div><h3>Training a fire and smoke detector for multi-camera surveillance</h3><p>Notes from building the detection layer of VigiLense, my final year project: training YOLO on D-Fire, reading the metrics honestly, and turning detections into alerts people can act on.</p></div>
     <span class="read">6 min read</span>
@@ -574,7 +576,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="js/main.js?v=20261021c" defer></script>
-<script src="js/terminal.js?v=20261021c" defer></script>
+<script src="js/main.js?v=20261021d" defer></script>
+<script src="js/terminal.js?v=20261021d" defer></script>
 </body>
 </html>

@@ -14,6 +14,18 @@
   display: grid; grid-template-columns: 140px 1fr auto; gap: 24px; align-items: baseline;
   padding: 22px 0; border-bottom: 1px solid var(--border); transition: background .15s;
 }
+.post-link:has(.post-thumb) {
+  grid-template-columns: 168px 1fr auto; grid-template-areas: "thumb time read" "thumb body read";
+  column-gap: 24px; row-gap: 4px; align-items: start;
+}
+.post-thumb {
+  grid-area: thumb; width: 168px; height: auto; aspect-ratio: 40 / 21; border-radius: 8px;
+  border: 1px solid var(--border); transition: transform .2s, border-color .2s;
+}
+.post-link:hover .post-thumb { transform: scale(1.03); border-color: var(--border-strong); }
+.post-link:has(.post-thumb) time { grid-area: time; }
+.post-link:has(.post-thumb) > div { grid-area: body; }
+.post-link:has(.post-thumb) .read { grid-area: read; align-self: center; }
 .post-link time { font-family: var(--mono); font-size: 13px; color: var(--text-3); }
 .post-link h3 { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
 .post-link p { margin-top: 4px; font-size: 14.5px; color: var(--text-2); }
@@ -75,7 +87,8 @@
 
 @media (max-width: 720px) {
   .page-head { padding: 64px 0 28px; }
-  .post-link { grid-template-columns: 1fr; gap: 6px; }
+  .post-link, .post-link:has(.post-thumb) { grid-template-columns: 1fr; grid-template-areas: "thumb" "time" "body"; gap: 6px; }
+  .post-thumb { width: 100%; margin-bottom: 6px; }
   .post-link .read { display: none; }
   .article { padding: 0 16px 72px; }
   .article-head { padding: 56px 0 28px; }
