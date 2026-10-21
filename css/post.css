@@ -100,6 +100,7 @@
   .nav-links--static {
     display: flex; position: static; flex-direction: row; margin: 0 0 0 auto; padding: 0; border: 0; background: none;
   }
+  .nav-links--static a { border-radius: 99px; }
   .nav-links--static a { padding: 6px 8px; font-size: 14px; }
   .nav-links--static + .nav-actions { margin-left: 0; }
   .nav--sub .brand span { display: none; }
