@@ -436,6 +436,45 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
 .footer-cta h2 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; color: var(--text); }
 .footer-cta p { margin-top: 6px; color: var(--text-2); }
 .footer-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Footer polish: soft glow, heading accents and hover effects */
+.footer {
+  background:
+    radial-gradient(55% 90% at 0% 0%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 70%),
+    radial-gradient(45% 80% at 100% 100%, color-mix(in srgb, var(--accent-2) 6%, transparent), transparent 70%),
+    var(--bg-elev);
+}
+.footer-col h2::after {
+  content: ""; display: block; width: 18px; height: 2px; margin-top: 9px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width .3s;
+}
+.footer-col:hover h2::after { width: 34px; }
+.footer-col > a { display: inline-flex; align-items: center; transition: color .2s; }
+.footer-col > a::before {
+  content: ""; width: 0; height: 1.5px; margin-right: 0; border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width .2s, margin-right .2s;
+}
+.footer-col > a:hover { color: var(--text); }
+.footer-col > a:hover::before { width: 10px; margin-right: 8px; }
+.footer-col > a .ext { margin-left: 3px; transition: transform .2s, color .2s; }
+.footer-col > a:hover .ext { transform: translate(2px, -2px); color: var(--accent); }
+.footer .brand img { transition: transform .3s, box-shadow .3s; }
+.footer .brand:hover img { transform: rotate(-6deg) scale(1.06); box-shadow: 0 6px 18px -4px color-mix(in srgb, var(--accent-2) 60%, transparent); }
+.footer-status { transition: border-color .2s; }
+.footer-status:hover { border-color: color-mix(in srgb, var(--ok) 45%, var(--border-strong)); }
+.footer-social a { transition: color .2s, border-color .2s, background .2s, transform .2s, box-shadow .2s; }
+.footer-social a:hover {
+  color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, var(--border-strong)); transform: translateY(-3px);
+  background: color-mix(in srgb, var(--accent) 10%, transparent); box-shadow: 0 8px 18px -8px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.footer-bottom nav a, .footer-bottom nav button {
+  background: linear-gradient(currentColor, currentColor) no-repeat left bottom / 0 1px; padding-bottom: 2px;
+  transition: color .2s, background-size .25s;
+}
+.footer-bottom nav a:hover, .footer-bottom nav button:hover { color: var(--text); background-size: 100% 1px; }
+@media (prefers-reduced-motion: reduce) {
+  .footer .brand:hover img, .footer-social a:hover, .footer-col > a:hover .ext { transform: none; }
+}
 /* ---------- Command palette ---------- */
 .palette {
   position: fixed; inset: 0; z-index: 200; display: flex; justify-content: center; align-items: flex-start;
