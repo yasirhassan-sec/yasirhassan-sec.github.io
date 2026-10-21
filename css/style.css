@@ -416,6 +416,33 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
 .footer-bottom a { transition: color .15s; }
 .footer-bottom a:hover { color: var(--text); }
 
+/* Footer: accent edge, CTA band, brand, contact meta and wordmark */
+.footer { position: relative; overflow: hidden; }
+.footer::before {
+  content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 1px; opacity: .55;
+  background: linear-gradient(90deg, transparent, var(--accent) 30%, var(--accent-2) 70%, transparent);
+}
+.footer .brand img { width: 28px; height: 28px; border-radius: 7px; }
+.footer-about p { color: var(--text-2); }
+.footer-col .ext { font-size: .85em; color: var(--text-3); }
+.footer-meta { display: inline-flex; align-items: center; gap: 8px; }
+.footer-meta svg { flex: none; color: var(--text-3); }
+.footer-time { font-family: var(--mono); font-size: 13px; }
+.footer-cta {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  margin-top: 48px; padding: 28px 32px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: radial-gradient(120% 160% at 0% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%), var(--bg);
+}
+.footer-cta h2 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; color: var(--text); }
+.footer-cta p { margin-top: 6px; color: var(--text-2); }
+.footer-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.footer-wordmark {
+  margin: 4px 0 -.14em; text-align: center; white-space: nowrap; user-select: none; pointer-events: none;
+  font-size: clamp(52px, 11vw, 140px); font-weight: 700; letter-spacing: -.05em; line-height: .8;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--text) 10%, transparent), transparent 85%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
 /* ---------- Command palette ---------- */
 .palette {
   position: fixed; inset: 0; z-index: 200; display: flex; justify-content: center; align-items: flex-start;
@@ -518,6 +545,9 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
   .footer-top { grid-template-columns: 1fr 1fr; gap: 32px 24px; padding-top: 44px; padding-bottom: 36px; }
   .footer-about { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-cta { margin-top: 36px; padding: 22px; }
+  .footer-cta-actions { width: 100%; }
+  .footer-cta-actions .btn { flex: 1; }
   .contact { grid-template-columns: 1fr; gap: 36px; }
   .form { padding: 20px; }
   .form-row { grid-template-columns: 1fr; }

@@ -194,6 +194,13 @@
   /* ---------- Analytics events ---------- */
   $$('a[href$="Yasir_Hassan_Resume.pdf"]').forEach(a => a.addEventListener('click', () => track('resume-download')));
 
-  /* ---------- Footer year ---------- */
+  /* ---------- Footer year and local time ---------- */
   $('#year').textContent = new Date().getFullYear();
+  const timeEl = $('[data-local-time]');
+  if (timeEl) {
+    const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Karachi', hour: '2-digit', minute: '2-digit' });
+    const tick = () => { timeEl.textContent = `${fmt.format(new Date())} PKT (UTC+5)`; };
+    tick();
+    setInterval(tick, 30000);
+  }
 })();

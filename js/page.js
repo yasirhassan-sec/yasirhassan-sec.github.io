@@ -32,4 +32,12 @@
 
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+
+  const timeEl = document.querySelector('[data-local-time]');
+  if (timeEl) {
+    const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Karachi', hour: '2-digit', minute: '2-digit' });
+    const tick = () => { timeEl.textContent = `${fmt.format(new Date())} PKT (UTC+5)`; };
+    tick();
+    setInterval(tick, 30000);
+  }
 })();
