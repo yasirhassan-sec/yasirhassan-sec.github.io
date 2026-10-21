@@ -17,6 +17,7 @@
 
   const projects = {
     vigilense: { url: 'projects/vigilense/', about: 'AI surveillance: multi-camera fire, smoke, weapon and person detection' },
+    netguard: { url: 'https://github.com/yasirhassan-sec/netguard', about: 'Network vulnerability scanner for homes and small offices' },
     milkiyat: { url: 'projects/milkiyat/', about: 'Tamper-evident land records on a signed SHA-256 hash chain' },
     dastarkhwan: { url: 'projects/dastarkhwan/', about: 'Commission-free restaurant ordering and management' },
     hrms: { url: 'https://github.com/yasirhassan-sec', about: 'Role-based HR system in Java Swing with an audit log' },
@@ -87,7 +88,7 @@
       if (/^resume(\.pdf)?$/.test(file)) {
         print('B.E. Computer Engineering, Bahria University (2023 to 2027)');
         print('Cybersecurity Intern, Safe City Islamabad (Jun to Sep 2026)');
-        print('Projects: VigiLense, Milkiyat, Dastarkhwan, HRMS, Enterprise Network');
+        print('Projects: VigiLense, NetGuard, Milkiyat, Dastarkhwan, HRMS, Enterprise Network');
         printLink('Download the full résumé (PDF)', RESUME);
       } else if (/^contact(\.txt)?$/.test(file)) {
         printLink(EMAIL, `mailto:${EMAIL}`);
@@ -97,7 +98,7 @@
         print(`${pad('AppSec', 12)}OWASP Top 10, Burp Suite, vulnerability assessment`);
         print(`${pad('Threat intel', 12)}CTI research, OSINT, incident response`);
         print(`${pad('Crypto', 12)}AES-256-GCM, RSA-PSS, SHA-256 hash chains, TOTP`);
-        print(`${pad('Network', 12)}VLANs, ACLs, NAT, SSH hardening, Wireshark, Nmap`);
+        print(`${pad('Network', 12)}VLANs, ACLs, NAT, SSH hardening, Wireshark, Nmap, NetGuard`);
         print(`${pad('Build', 12)}Python, PyTorch/YOLO, FastAPI, Node.js, Java`);
       } else if (!file) {
         print('cat: missing file operand. Try: cat resume.pdf', 't-err');

@@ -160,6 +160,7 @@ section[id] { scroll-margin-top: 64px; }
 }
 .card:hover { border-color: var(--border-strong); }
 .card-feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.05fr 1fr; }
+.card-wide { grid-column: 1 / -1; }
 .card-media {
   display: grid; place-items: center; aspect-ratio: 16 / 9; overflow: hidden; border-bottom: 1px solid var(--border);
 }
