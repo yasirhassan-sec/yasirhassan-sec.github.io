@@ -416,7 +416,7 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
 .footer-bottom a { transition: color .15s; }
 .footer-bottom a:hover { color: var(--text); }
 
-/* Footer: accent edge, CTA band, brand, contact meta and wordmark */
+/* Footer: accent edge, CTA band, brand and contact meta */
 .footer { position: relative; overflow: hidden; }
 .footer::before {
   content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 1px; opacity: .55;
@@ -436,13 +436,6 @@ main > .section .section-head h2::before, main > .section .contact-intro h2::bef
 .footer-cta h2 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; color: var(--text); }
 .footer-cta p { margin-top: 6px; color: var(--text-2); }
 .footer-cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-.footer-wordmark {
-  margin: 4px 0 -.14em; text-align: center; white-space: nowrap; user-select: none; pointer-events: none;
-  font-size: clamp(52px, 11vw, 140px); font-weight: 700; letter-spacing: -.05em; line-height: .8;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--text) 10%, transparent), transparent 85%);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-}
-
 /* ---------- Command palette ---------- */
 .palette {
   position: fixed; inset: 0; z-index: 200; display: flex; justify-content: center; align-items: flex-start;
