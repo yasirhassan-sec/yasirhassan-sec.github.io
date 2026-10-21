@@ -85,6 +85,7 @@
     { group: 'Actions', label: 'Download résumé', hint: 'PDF', run: () => $('#resumeLink').click() },
     { group: 'Actions', label: 'Copy email', hint: EMAIL, run: copyEmail },
     { group: 'Actions', label: 'Toggle theme', hint: '', run: toggleTheme },
+    { group: 'Actions', label: 'Open terminal', hint: '`', run: () => dispatchEvent(new Event('open-terminal')) },
     { group: 'Links', label: 'GitHub', hint: '↗', run: open('https://github.com/yasirhassan-sec') },
     { group: 'Links', label: 'LinkedIn', hint: '↗', run: open('https://www.linkedin.com/in/yasir-hassan-') }
   ];

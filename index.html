@@ -433,6 +433,7 @@
       <a href="assets/Yasir_Hassan_Resume.pdf" download>Résumé</a>
       <a href=".well-known/security.txt">Security</a>
       <a href="writeups/feed.xml">RSS</a>
+      <button type="button" data-open-terminal>Terminal <kbd>`</kbd></button>
       <a href="#main" class="to-top-link">Back to top ↑</a>
     </nav>
   </div>
@@ -451,8 +452,27 @@
   </div>
 </div>
 
+<!-- Terminal (press `) -->
+<div class="term" id="term" hidden>
+  <div class="term-box" role="dialog" aria-modal="true" aria-labelledby="termTitle">
+    <div class="term-bar">
+      <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="term-title" id="termTitle">visitor@yasirhassan.tech: ~</span>
+      <button type="button" class="term-close" id="termClose" aria-label="Close terminal">Esc</button>
+    </div>
+    <div class="term-body" id="termBody">
+      <div id="termOut" role="log" aria-live="polite"></div>
+      <form class="term-line" id="termForm">
+        <span class="term-prompt" aria-hidden="true">visitor@yasirhassan.tech:~$</span>
+        <input id="termInput" type="text" aria-label="Terminal command" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="send">
+      </form>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="js/main.js" defer></script>
+<script src="js/terminal.js" defer></script>
 </body>
 </html>
